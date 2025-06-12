@@ -12,7 +12,7 @@ const ResultPage: React.FC = () => {
   if (!result) {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center bg-pink-50 text-center px-4">
-        <h1 className="text-2xl font-bold mb-4">Oops! 😢</h1>
+        <h1 className="text-2xl font-bold mb-4">Oops! </h1>
         <p className="mb-4">No result found. Try taking the quiz again!</p>
         <button
           onClick={() => navigate("/survey")}
@@ -29,11 +29,11 @@ const ResultPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-pink-50 p-6 text-center">
       <div className="bg-white shadow-xl rounded-xl p-6 max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-2">🎉 You’re: {personality}</h1>
+        <h1 className="text-3xl font-bold mb-2"> You’re: {personality}</h1>
         <p className="text-gray-600 mb-6">Here’s what suits you best:</p>
 
         <div className="mb-4">
-          <h2 className="text-xl font-semibold mb-2">💖 Top Matches</h2>
+          <h2 className="text-xl font-semibold mb-2">Top Matches</h2>
           <ul className="list-disc list-inside text-pink-700">
             {matches.map((m: string, idx: number) => (
               <li key={idx}>{m}</li>
@@ -42,7 +42,7 @@ const ResultPage: React.FC = () => {
         </div>
 
         <div className="mb-4">
-          <h2 className="text-xl font-semibold mb-2">🎯 Your Interests</h2>
+          <h2 className="text-xl font-semibold mb-2"> Your Interests</h2>
           <ul className="list-disc list-inside text-pink-700">
             {interests.map((i: string, idx: number) => (
               <li key={idx}>{i}</li>

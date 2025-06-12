@@ -32,19 +32,26 @@ const SurveyPage: React.FC = () => {
     return "the-creative";
   };
 
-  const handleSubmit = async () => {
-    const personality = calculatePersonality();
-    const user = auth.currentUser;
-    if (!user) return alert("Not logged in");
+ const handleSubmit = async () => {
+  const personality = calculatePersonality();
+  const user = auth.currentUser;
 
-    await setDoc(doc(db, "users", user.uid), {
-      uid: user.uid,
-      personality,
-      answers,
-    });
+  console.log("auth.currentUser:", user); // 🔍 Debug log
 
-    navigate("/results");
-  };
+  if (!user) {
+    alert("Still not logged in");
+    return;
+  }
+
+  await setDoc(doc(db, "users", user.uid), {
+    uid: user.uid,
+    personality,
+    answers,
+  });
+
+  navigate("/results");
+};
+
 
   return (
     <div className="min-h-screen bg-orange-50 flex flex-col items-center p-6">
