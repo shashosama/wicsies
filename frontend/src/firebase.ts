@@ -1,5 +1,6 @@
 // src/firebase.ts
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 
@@ -12,8 +13,7 @@ const firebaseConfig = {
   appId: "your-app-id"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Export Firestore only (no auth needed)
-export const db = getFirestore(app);
+export const auth = getAuth(app);    // ✅ Required export!
+export const db = getFirestore(app); // ✅ Already working
