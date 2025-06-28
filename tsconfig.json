@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./wicsies-main/frontend/tsconfig.app.json" },
+    { "path": "./wicsies-main/frontend/tsconfig.node.json" }
+  ]
+}
